@@ -14,16 +14,6 @@
     $answer.textContent = answer;
   };
 
-  const checkQuestion = () => {
-    console.log("checking question");
-    const $input = document.querySelector('.question-text');
-    const value = $input.value.trim();
-
-    if(value) {
-      handleClickQuestion();
-    }
-  };
-
   const showQuestion = input => {
     const $question = document.querySelector('.question');
     $question.textContent = input.value;
@@ -41,12 +31,8 @@
   }
   
   const init = () => {
-    // const $question = document.querySelector('.question-text');
-    // $question.focus = checkQuestion($question);
-    document.querySelector('.question-submit').addEventListener('click', handleClickQuestion);
-    // if(canAnswer) {
-    //   document.document.querySelector('.question-submit').addEventListener('click', handleClickQuestion);
-    // }
+    const $button = document.querySelector('.question-submit');
+    $button.addEventListener('click', handleClickQuestion);
   };
 
   init();
