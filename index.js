@@ -8,17 +8,46 @@
   "My reply is no", "My sources say no", "Outlook not so good",
   "Very doubtful"];
 
-  const $button = document.querySelector('.question-submit');
-
   const pickAnswer = () => {
     const $answer = document.querySelector('.eightball-text');
     const answer = answers[Math.floor(Math.random() * answers.length)];
     $answer.textContent = answer;
+  };
+
+  const checkQuestion = () => {
+    console.log("checking question");
+    const $input = document.querySelector('.question-text');
+    const value = $input.value.trim();
+
+    if(value) {
+      handleClickQuestion();
+    }
+  };
+
+  const showQuestion = input => {
+    const $question = document.querySelector('.question');
+    $question.textContent = input.value;
+  }
+
+  const handleClickQuestion = () => {
+    ("click");
+    const $input = document.querySelector('.question-text');
+    const value = $input.value.trim();
+
+    if(value) {
+      showQuestion($input);
+      pickAnswer();
+    }
   }
   
   const init = () => {
-    $button.addEventListener('click',pickAnswer);
-  }
+    // const $question = document.querySelector('.question-text');
+    // $question.focus = checkQuestion($question);
+    document.querySelector('.question-submit').addEventListener('click', handleClickQuestion);
+    // if(canAnswer) {
+    //   document.document.querySelector('.question-submit').addEventListener('click', handleClickQuestion);
+    // }
+  };
 
   init();
 }
