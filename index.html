@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Maxim's Eight Ball</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Maxim's Eight Ball</h1>
   <form class="question-form" action="">
-    <input class="question-text" type="text" name="" id="" required>
+    <input class="question-text" type="text" name="question" autocomplete="off" required>
+    <label for="question" class="question-label">
+      <span class="content-question">Question</span>
+    </label>
   </form>
   <button class="question-submit">Ask</button>
   <p class="question">Ask a question</p>
   <div class="eightball">
-    <div>
-      <p class="eightball-text">
-        8
-      </p>
+    <div class="inner-eightball">
+      <div class="inner-eightball-triangle">
+          <p class="eightball-text">
+              8
+            </p>
+      </div>
     </div>
   </div>
   <script src="index.js"></script>
